@@ -13,6 +13,11 @@ import top.yukonga.miuix.kmp.theme.ThemeController
 val Accent = Color(0xFF8B6CF6)
 val AccentSoft = Color(0xFF4FC3F7)
 
+// Warna dari APK asli (REA decode-android-resources).
+val BgLight = Color(0xFFF6F6F6)
+val BgDark = Color(0xFF0F1418)
+val PanelDark = Color(0xFF1F233A)
+
 @Composable
 fun StudioTheme(dark: Boolean, content: @Composable () -> Unit) {
     val controller = remember(dark) {
@@ -22,9 +27,18 @@ fun StudioTheme(dark: Boolean, content: @Composable () -> Unit) {
         )
     }
     val scheme = if (dark) {
-        darkColorScheme(primary = Accent, secondary = AccentSoft)
+        darkColorScheme(
+            primary = Accent,
+            secondary = AccentSoft,
+            background = BgDark,
+            surface = PanelDark,
+        )
     } else {
-        lightColorScheme(primary = Accent, secondary = AccentSoft)
+        lightColorScheme(
+            primary = Accent,
+            secondary = AccentSoft,
+            background = BgLight,
+        )
     }
     MaterialTheme(colorScheme = scheme) {
         MiuixTheme(controller = controller, content = content)
