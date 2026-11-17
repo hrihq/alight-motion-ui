@@ -1,0 +1,2 @@
+-keep class com.hrihq.motionstudio.** { *; }
+-keep class top.yukonga.miuix.kmp.** { *; }
