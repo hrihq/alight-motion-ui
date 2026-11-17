@@ -17,9 +17,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
-import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
@@ -296,7 +296,7 @@ fun AssetsScreen(onAsset: (String) -> Unit) {
                 }
             }
         }
-        items(assets, key = { it.first }) { (name, tint) ->
+        androidx.compose.foundation.lazy.grid.items(assets, key = { it.first }) { (name, tint) ->
             Enter {
                 Box(
                     Modifier
